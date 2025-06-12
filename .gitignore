@@ -1,0 +1,11 @@
+# Archivos de estado y logs de Ansible
+*.retry
+*.log
+
+# Archivos de configuración locales de editores
+.vscode/
+.idea/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
