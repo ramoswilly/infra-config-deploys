@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Nombre para nuestro despliegue
+  name: frontend-deployment
+spec:
+  # Cuántas copias de la app queremos.
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      # Etiqueta que identifica a los pods de esta app
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend-container
+        # IMPORTANTE: El nombre de la imagen debe ser EXACTO al que construiste
+        image: frontend-app:v0.1
+        # CRÍTICO: Esta política le dice a k8s que no busque la imagen en internet,
+        # sino que use la local que importamos si está presente.
+        imagePullPolicy: IfNotPresent
+        ports:
+        # El puerto que Nginx expone dentro del contenedor (definido en el Dockerfile)
+        - containerPort: 80
