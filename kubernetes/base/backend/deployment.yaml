@@ -12,9 +12,11 @@ spec:
       labels:
         app: backend
     spec:
+      imagePullSecrets:
+      - name: ghcr-creds
       containers:
       - name: backend-container
-        image: yolo-api
-        imagePullPolicy: IfNotPresent
+        image: ghcr.io/ramoswilly/yolo-api
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
