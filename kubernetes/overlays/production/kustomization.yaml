@@ -4,21 +4,21 @@ kind: Kustomization
 bases:
   - ../../base
 
-namespace: staging
+namespace: production
 
 # Cambia la imagen del backend
 images:
   - name: yolo-api
-    newTag: "staging-latest" # O el tag del commit
+    newTag: "temporal" # Jenkins lo reemplaza
 
 # Cambia la imagen del frontend
-images:
-  - name: frontend-app
-    newTag: "staging-latest" # O el tag del commit
+#images:
+#  - name: frontend-app
+#    newTag: "staging-latest" # O el tag del commit
 
 # Define las réplicas para CADA componente
 replicas:
   - name: backend-deployment # Nombre del deployment del backend
     count: 1
-  - name: frontend-deployment # Nombre del deployment del frontend
-    count: 1
+#  - name: frontend-deployment # Nombre del deployment del frontend
+#    count: 1
