@@ -37,6 +37,11 @@ pipeline {
                 }
                 echo "Aplicando configuración de Producción en Kubernetes..."
                 sh "sudo kubectl apply -k kubernetes/overlays/production/"
+
+		// --- PASO CLAVE AÑADIDO ---
+                echo "Forzando el reinicio del deployment para aplicar la nueva imagen..."
+                // 3. Fuerza el reinicio del deployment para asegurar que los nuevos pods se creen.
+                sh "sudo kubectl rollout restart deployment backend-deployment -n production"
             }
         }
     }
