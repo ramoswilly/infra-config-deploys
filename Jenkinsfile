@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'IMAGE_NAME', defaultValue: 'ghcr.io/ramoswilly/yolo-api', description: 'Full Docker image name from registry')
+        string(name: 'IMAGE_NAME', defaultValue: 'ghcr.io/tecnologias-emergentes-usal/yolo-api', description: 'Full Docker image name from registry')
         string(name: 'IMAGE_TAG', defaultValue: 'latest', description: 'Docker image tag to deploy')
     }
 
