@@ -16,7 +16,7 @@ spec:
       - name: ghcr-creds
       containers:
       - name: backend-container
-        image: ghcr.io/ramoswilly/yolo-api
+        image: ghcr.io/tecnologias-emergentes-usal/yolo-api
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
