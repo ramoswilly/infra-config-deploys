@@ -3,6 +3,6 @@ kind: Kustomization
 # Agrupa todos los componentes base de la aplicación
 resources:
   - ./backend # Apunta al kustomization del backend
-  - ./frontend  # Apunta al kustomization del frontend
+#  - ./frontend  # Apunta al kustomization del frontend
 
     
