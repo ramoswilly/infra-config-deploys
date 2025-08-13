@@ -17,6 +17,9 @@ spec:
       containers:
       - name: backend-container
         image: ghcr.io/tecnologias-emergentes-usal/yolo-api
+        envFrom:
+        - configMapRef:
+            name: app-config
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
